@@ -21,6 +21,14 @@ print(ws["A10"].value) # 값이 없을 땐 'None'출력
 # column = A, B, C, ....
 print(ws.cell(row=1, column=2).value)
 
-ws.cell(row=1, column=3, value=10) #C1 에 10 입력
+c=ws.cell(row=1, column=3, value=10) #C1 에 10 입력
+print(c.value)
+
+from random import *
+
+#반복문을 이용해서 랜덤 숫자 채우기
+for x in range(1,11):
+    for y in range(1,11):
+        ws.cell(row=x, column=y, value=randint(0,101))
 
 wb.save("sample.xlsx")
