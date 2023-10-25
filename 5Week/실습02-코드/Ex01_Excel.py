@@ -141,13 +141,14 @@ book.close()                         # 닫기
 ###############################################################################
 # [실습3] Openpyxl 모듈(3) - 셀서식 지정하기
 ###############################################################################
-import openpyxl
+# import openpyxl
+from openpyxl import *
 from openpyxl.styles import Alignment, PatternFill, Font, Border, Side
 
 # 상수
 TITLE_CELL_COLOR = "AA8866"
 
-wb = openpyxl.load_workbook('재고장.xlsx')
+wb = openpyxl.load_workbook(r'C:\Users\user\SmartFactory\5Week\실습02-코드\재고장.xlsx')
 ws_raw = wb['물류재고장']
 # ws.append(['1-2-3', 'SI1234', '추가된 사출성형 품목', '사출', 6000, '2021-03-29'])
 
@@ -217,7 +218,7 @@ ws.add_chart(chart, "C1")
 wb.save("재고장_SimpleChart.xlsx")
 wb.close()
 
-"""
+
 ###############################################################################
 # [실습4] Openpyxl 모듈(5) - 다양한 chart 그리기
 ###############################################################################
@@ -259,5 +260,7 @@ ws.add_chart(chart, 'B14')          # chart를 시트의 B14에 삽입
 
 wb.save('재고장_radarchart.xlsx')
 wb.close()
+
+"""
 
 
